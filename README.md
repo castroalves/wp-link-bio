@@ -57,7 +57,7 @@ _You can add only one link to your Instagram bio._
   - Posts
   - Shoppable Page (Sell your products on Instagram)
 
-[Start Your 7-day Free Trial](https://blastmkt.com/wp-link-bio-wordpress-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=wordpress-plugin-repository&utm_content=upgrade-now)
+[[Start Your 7-day Free Trial](https://blastmkt.com/wp-link-bio-wordpress-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=wordpress-plugin-repository&utm_content=upgrade-now)]
 
 ### Integrations
 
