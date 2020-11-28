@@ -1,0 +1,161 @@
+.wrap h1 {
+    margin-bottom: 1em;
+}
+
+.wrap form h2 {
+    background-color: #fff;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    display: inline-block;
+    margin: 0;
+    padding: 10px;
+}
+
+.form-table {
+    background-color: #fff;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+    /* box-shadow: 0 1px 5px rgba(0, 0, 0, .2); */
+    margin: 0 0 1em;
+}
+
+.form-table th {
+    padding-left: 20px;
+}
+
+.wplb-form {
+    display: flex;
+}
+
+.wplb-form > .col-1 {
+    flex: 66.66%;
+}
+
+.wplb-form > .col-2 {
+    flex: 33.33%;
+}
+
+.phone-emulator {
+    background: url('../images/android-mockup.png') no-repeat -100px 20px;
+    background-size: cover;
+    width: 300px;
+    height: 500px;
+    position: fixed;
+    top: 10%;
+}
+
+.phone-emulator .phone-screen {
+    font-size: 0.7em;
+    height: 320px;
+    margin: 110px 0 0 54px;
+    position: absolute;
+    width: 192px;
+}
+
+.phone-emulator .phone-screen .screen-header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+
+.phone-emulator .phone-screen .screen-header .logo-placeholder {
+    background-color: #ccc;
+    border: 1px solid #000;
+    color: #000;
+    font-weight: bold;
+    margin: 0 auto;
+    padding: 2px 0;
+    width: 25%;
+}
+
+.phone-emulator .phone-screen .social-media {
+    padding: 2px 0;
+    padding: 0 5px;
+}
+
+.phone-emulator .phone-screen .social-media__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.phone-emulator .phone-screen .social-media__links .social-media__links__item {
+    background-color: transparent;
+    border-radius: 2px;
+    display: block;
+    font-size: 9px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    color: #fff;
+    padding: 2px;
+    text-align: center;
+    margin: 0 3px 0;
+}
+
+.phone-emulator .phone-screen .social-media__links .social-media__links__item:hover {
+    cursor: pointer;
+}
+
+.phone-emulator .phone-screen .screen-content {
+    padding: 5px;
+}
+
+.phone-emulator .phone-screen .screen-content ul {
+    margin: 0;
+    padding: 0;
+}
+
+.phone-emulator .phone-screen .screen-content .links {
+    border: 1px solid transparent;
+    color: #fff;
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.phone-emulator .phone-screen .screen-content .links:hover {
+    cursor: pointer;
+}
+
+.phone-emulator .phone-screen .screen-content .posts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.phone-emulator .phone-screen .screen-content .post-item {
+    background-color: #fff;
+    border: 1px solid #000;
+    height: 85px;
+    width: 85px;
+    margin-bottom: 4px;
+}
+
+.phone-emulator .phone-screen .screen-content .post-item img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.phone-emulator .phone-screen .screen-footer {
+    background-color: #fff;
+    font-weight: 600;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 2px 0;
+    position: absolute;
+    text-align: center;
+}

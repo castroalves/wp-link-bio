@@ -1,0 +1,79 @@
+= Changelog archive =
+
+This is an archive of older changelog entries. Most recent entries are maintained in readme.txt
+
+= 1.3.1 =
+
+* Bug fixes
+    * Fixed conflict with other plugins
+
+= 1.3.0 =
+
+* New features
+    * Live Preview: configure your link in bio page settings in the WordPress dashboard
+    * (Pro Only) WooCommerce Integration: display a shoppable page and sell directly on Instagram
+    * (Pro Only) 3 Templates: Links, Posts, and Shoppable Page (requires WooCommerce)
+    * (Pro Only) Display image thumbnails on links
+    * (Pro Only) Display your Social Networks URLs (Facebook, Instagram, Twitter, YouTube, Twitch, Pinterest, LinkedIn, WhatsApp, Messenger, and Telegram)
+
+= 1.2.4 =
+
+* Bug fixes
+    * Fixed Google Analytics and Facebook Pixel bug
+
+= 1.2.3 =
+
+* Bug fixes
+    * Added missing animate.min.css file
+
+= 1.2.2 =
+
+* New features
+    * Added link animation support, powered by [Animate.css](https://daneden.github.io/animate.css/)
+    * Added anchor links support
+    * Added emoji support
+    * Added UTM parameters support
+    * Display links ordered by order on admin by default
+
+* Bug fixes
+    * Removed default UTM parameters
+    * Removed public attribute from CPT (made it not public)
+
+= 1.2.1 =
+
+* Bug fixes
+    * Fixed admin and frontend conflicts
+    * Added wplb_is_endpoint() method
+    * Added validation on wplb_front_scripts()
+    * Added validation on wplb_template_include()
+    * Moved wplb_remove_all_scripts() and wplb_remove_all_styles() to wplb_clear_head()
+    * Changed wplb_clear_head() to load on wp action
+
+= 1.2.0 =
+
+* Free version released on WordPress repository. Yay! :)
+
+= 1.1.0 =
+
+* New features
+    * Added Freemius integration
+    * Added dropdown to select landing page
+    * Added read-only field to display Link URL
+    * Added copy link button to make easier to copy Link URL
+    * Added WP Media uploader integration to add profile or logo pictures
+    * Added WP Color Picker integration to background and link colors
+    * Added English Translation (default)
+
+= 1.0.1 =
+
+* New features
+    * Changed title of page from site name to page title
+
+* Bug fixes
+    * Removed sticky posts to match the number of posts displayed in grid style
+    * Changed UTM Source to 'instagram' (lowercase) and UTM Medium to 'post'
+    * Fixed first submenu item label on dashboard
+
+= 1.0.0 =
+
+* Initial beta release.

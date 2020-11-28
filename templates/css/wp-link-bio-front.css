@@ -1,0 +1,193 @@
+html, body {
+    background-color: #fafafa;
+    padding: 0;
+    margin: 0;
+    font-size: 18px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.responsive-image {
+    max-width: 100%;
+}
+
+.wrapper .header {
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.logo {
+    max-width: 50%;
+}
+
+.logo a {
+    display: block;
+}
+
+.wrapper .feed {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.wrapper .feed .post {
+    position: relative;
+    width: calc(100% / 2 - 2px);
+    margin-right: 2px;
+    margin-bottom: 2px;
+}
+
+.wrapper .feed .post .post-title {
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, .5));
+    color: #fff;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    line-height: 1.2em;
+    position: absolute;
+    font-size: 16px;
+    padding: 10px;
+    margin: 0;
+    text-shadow: 1px 1px 5px #000;
+}
+
+.wrapper .feed .post a {
+    display: block;
+}
+
+.wrapper .feed .post img {
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper .links {
+    max-width: calc(100% - 20px);
+    padding: 10px;
+}
+
+.wrapper .links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper .links .link-animated {
+    animation-duration: 1s;
+    animation-delay: 2s;
+    animation-iteration-count: 3;
+}
+
+.wrapper .links a {
+    display: flex;
+    text-decoration: none;
+    padding: 10px;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    line-height: 1.5em;
+    background-color: #ee8424;
+    color: #fff;
+    font-weight: 700;
+    position: relative;
+}
+
+.wrapper .links a .link-thumb {
+    left: 10px;
+    position: absolute;
+}
+
+.wrapper .links a .link-title {
+    line-height: 48px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.bottom-fixed {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #0025aa;
+}
+
+.wrapper .social-media {
+    padding: 10px;
+}
+
+.wrapper .social-media__links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wrapper .social-media__links .social-media__links__item {
+    text-align: center;
+    margin: 0 5px 5px;
+}
+
+.wrapper .social-media__links .social-media__links__item a {
+    background-color: #ee8424;
+    border-radius: 4px;
+    display: block;
+    font-size: 16px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    color: #fff;
+    padding: 4px;
+}
+
+.credits {
+    text-align: center;
+    padding: 20px;
+}
+
+.credits a {
+    color: #ee8424;
+    font-weight: bold;
+}
+
+/* 
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) {
+
+    .wrapper {
+        width: 790px;
+        margin: 0 auto;
+    }
+
+    .responsive-image {
+        width: 100%;
+    }
+
+}
+
+/* 
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    .responsive-image {
+        width: 100%;
+    }
+
+}
