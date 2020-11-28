@@ -1,4 +1,4 @@
-https://img.shields.io/wordpress/plugin/dt/wp-link-bio | https://img.shields.io/wordpress/plugin/installs/wp-link-bio
+<img src="https://img.shields.io/wordpress/plugin/dt/wp-link-bio" alt="WP Link Bio Downloads" title="WP Link Bio Downloads" /> <img src="https://img.shields.io/wordpress/plugin/installs/wp-link-bio" alt="WP Link Bio Active Installs" title="WP Link Bio Active Installs" />
 
 # WP Link Bio
 
