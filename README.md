@@ -1,4 +1,4 @@
-<img src="https://img.shields.io/wordpress/plugin/dt/wp-link-bio" alt="WP Link Bio Downloads" title="WP Link Bio Downloads" /> <img src="https://img.shields.io/wordpress/plugin/installs/wp-link-bio" alt="WP Link Bio Active Installs" title="WP Link Bio Active Installs" />
+<img src="https://img.shields.io/wordpress/plugin/dt/wp-link-bio" alt="WP Link Bio Downloads" title="WP Link Bio Downloads" /> <img src="https://img.shields.io/wordpress/plugin/installs/wp-link-bio" alt="WP Link Bio Active Installs" title="WP Link Bio Active Installs" /> [![HitCount](http://hits.dwyl.com/castroalves/wp-link-bio.svg)](http://hits.dwyl.com/castroalves/wp-link-bio)
 
 # WP Link Bio
 
