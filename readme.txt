@@ -115,7 +115,6 @@ Of course! We'd love to get your ideas! Please, [submit your idea](https://wordp
 
 == Changelog ==
 
-= 1.3.1 =
+= 1.3.2 =
 
-* Bug fixes
-    * Fixed conflict with other plugins
+* Updated compatibility to WordPress 5.5.3
