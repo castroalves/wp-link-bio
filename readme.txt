@@ -4,7 +4,7 @@ Donate link: https://blastmkt.com/wp-link-bio-wordpress-plugin/?utm_source=wordp
 Tags: instagram, twitter, linktree, link bio, landing page
 Requires at least: 4.6
 Tested up to: 5.5.3
-Requires PHP: 5.6
+Requires PHP: 7.0
 Stable tag: trunk
 License: GPLv2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -115,7 +115,8 @@ Of course! We'd love to get your ideas! Please, [submit your idea](https://wordp
 
 == Changelog ==
 
-= 1.3.3 =
+= 1.4.0 =
 
-* Bug fixes
-  * Remove PHP warning when social networks template is missing
+* Updated Freemius SDK to version 2.4.1
+* Increased recommended PHP version to 7.0 or greater
+* Dropped support for PHP 5.6 and other older versions
