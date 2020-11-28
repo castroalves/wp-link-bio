@@ -16,8 +16,12 @@
 
     <?php 
     $display_location = get_option( 'wplb_sn_display_location', 'before' );
-    if ($display_location == 'before') {
-        include_once WPLB_PATH . '/templates/pro/social-networks.php';
+    $social_networks_template = WPLB_PATH . '/templates/pro/social-networks.php';
+    if (
+        $display_location == 'before'
+        && file_exists($social_networks_template)
+        ) {
+        include_once $social_networks_template;
     }
     ?>
 

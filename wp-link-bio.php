@@ -4,7 +4,7 @@
  * Plugin Name: WP Link Bio
  * Plugin URI: https://blastmkt.com/wp-link-bio
  * Description: Add unlimited links to your Instagram bio using your own domain, powered by WordPress.
- * Version: 1.3.2
+ * Version: 1.3.3
  * Author: Blast Marketing
  * Author URI: https://blastmkt.com/
  * License: GPLv2

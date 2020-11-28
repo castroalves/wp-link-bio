@@ -63,7 +63,7 @@ _You can add only one link to your Instagram bio._
 
 ## Integrations
 
-* WooCommerce (Pro only)
+* WooCommerce (PRO only)
 * Facebook Pixel
 * Google Analytics
 * Google Tag Manager
@@ -115,6 +115,7 @@ Of course! We'd love to get your ideas! Please, [submit your idea](https://wordp
 
 == Changelog ==
 
-= 1.3.2 =
+= 1.3.3 =
 
-* Updated compatibility to WordPress 5.5.3
+* Bug fixes
+  * Remove PHP warning when social networks template is missing
