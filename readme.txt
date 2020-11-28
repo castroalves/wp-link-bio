@@ -3,7 +3,7 @@ Contributors: cadudecastroalves, blastmkt, freemius
 Donate link: https://blastmkt.com/wp-link-bio-wordpress-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=wordpress-plugin-repository&utm_content=donate
 Tags: instagram, twitter, linktree, link bio, landing page
 Requires at least: 4.6
-Tested up to: 5.2.2
+Tested up to: 5.5.3
 Requires PHP: 5.6
 Stable tag: trunk
 License: GPLv2
