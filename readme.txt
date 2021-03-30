@@ -124,13 +124,7 @@ Of course! We'd love to get your ideas! Please, [submit your idea](https://wordp
 
 == Changelog ==
 
-= 1.4.2 =
+= 1.4.4 =
 
-* New features
-    * Added link thumbnails to free version
-    * Added social media links to free version
-    * Added notice to inform user whether Simple Page Ordering plugin is installed or activated
-    * Add link to Support Forum on menu
-
-* Bug fixes
-    * Fixed bug that was preventing users to add link thumbnails
+* Fixed critical error in the landing page
+    
