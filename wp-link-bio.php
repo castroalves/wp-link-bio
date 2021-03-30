@@ -3,8 +3,8 @@
 /** 
  * Plugin Name: WP Link Bio
  * Plugin URI: https://blastmkt.com/wp-link-bio
- * Description: Add unlimited links to your Instagram bio using your own domain, powered by WordPress.
- * Version: 1.4.1
+ * Description: Add unlimited links to your Instagram bio, powered by WordPress.
+ * Version: 1.4.2
  * Author: Blast Marketing
  * Author URI: https://blastmkt.com/
  * License: GPLv2
@@ -23,8 +23,8 @@
  *  
  * You should have received a copy of the GNU General Public License
  * along with {Plugin Name}. If not, see {URI to Plugin License}.
- *
-*/
+ * 
+ */
 define( 'WPLB_PATH', plugin_dir_path( __FILE__ ) );
 if ( !defined( 'ABSPATH' ) ) {
     exit;
@@ -54,13 +54,13 @@ if ( function_exists( 'wplb_fs' ) ) {
                     'has_addons'      => false,
                     'has_paid_plans'  => true,
                     'trial'           => array(
-                    'days'               => 7,
+                    'days'               => 14,
                     'is_require_payment' => false,
                 ),
                     'has_affiliation' => 'selected',
                     'menu'            => array(
                     'slug'        => 'edit.php?post_type=wp-link-bio',
-                    'support'     => false,
+                    'support'     => true,
                     'affiliation' => false,
                 ),
                     'is_live'         => true,
@@ -99,7 +99,6 @@ if ( function_exists( 'wplb_fs' ) ) {
     add_filter( 'plugin_action_links_' . plugin_basename( __FILE__ ), 'wplb_add_plugin_page_settings_link' );
     function wplb_setup_post_type()
     {
-        $supports = [ 'title', 'page-attributes', 'custom-fields' ];
         register_post_type( 'wp-link-bio', [
             'labels'     => [
             'menu_name'     => 'WP Link Bio',
@@ -111,10 +110,9 @@ if ( function_exists( 'wplb_fs' ) ) {
             'rewrite'    => [
             'slug' => 'link',
         ],
-            'show_ui'       => true,
-            'hierarchical'  => true,
+            'show_ui'    => true,
             'rest_base'  => 'wp-link-bio',
-            'supports'   => $supports,
+            'supports'   => [ 'title', 'page-attributes', 'thumbnail' ],
             'menu_icon'  => 'dashicons-admin-links',
             'capability' => 'page',
         ] );
@@ -364,6 +362,111 @@ if ( function_exists( 'wplb_fs' ) ) {
             'placeholder' => '#000000',
         ]
         );
+        // if ( wplb_fs()->can_use_premium_code__premium_only() ) {
+        add_settings_section(
+            'wplb_section_social_networks_settings',
+            __( 'Social Networks', 'wp-link-bio' ),
+            false,
+            //'wplb_section_integration_settings_cb',
+            'wp-link-bio'
+        );
+        $display_location = [ [
+            'id'       => 'wplb_sn_display_location',
+            'title'    => __( 'Display Location', 'wp-link-bio' ),
+            'callback' => 'wplb_select_cb',
+            'section'  => 'wplb_section_social_networks_settings',
+            'choices'  => [
+            'before' => __( 'Before Content', 'wp-link-bio' ),
+            'after'  => __( 'After Content', 'wp-link-bio' ),
+        ],
+            'default'  => 'before',
+        ] ];
+        wplb_register_fields( $display_location );
+        $social_networks = [
+            [
+            'id'          => 'wplb_sn_facebook',
+            'title'       => __( 'Facebook', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://facebook.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_instagram',
+            'title'       => __( 'Instagram', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://instagram.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_twitter',
+            'title'       => __( 'Twitter', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://twitter.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_youtube',
+            'title'       => __( 'Youtube', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://youtube.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_twitch',
+            'title'       => __( 'Twitch', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://twitch.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_pinterest',
+            'title'       => __( 'Pinterest', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://pinterest.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_linkedin',
+            'title'       => __( 'Linkedin', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://linkedin.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_whatsapp',
+            'title'       => __( 'WhatsApp', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://wa.me',
+            'type'        => 'url',
+            'description' => __( 'How to create WhatsApp link <a href="https://faq.whatsapp.com/en/android/26000030/" target="_blank">here</a>', 'wp-link-bio' ),
+        ],
+            [
+            'id'          => 'wplb_sn_messenger',
+            'title'       => __( 'Messenger', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://m.me',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_telegram',
+            'title'       => __( 'Telegram', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://t.me',
+            'type'        => 'url',
+        ]
+        ];
+        wplb_register_fields( $social_networks, 'wplb_social_networks' );
+        // }
         add_settings_section(
             'wplb_section_integration_settings',
             __( 'Integrations', 'wp-link-bio' ),
@@ -672,7 +775,7 @@ if ( function_exists( 'wplb_fs' ) ) {
         }
         settings_errors( 'wplb_messages' );
         $logo_url = get_option( 'wplb_logo_url' );
-        $template = get_option( 'wplb_template' );
+        $template = get_option( 'wplb_template', 'link' );
         ?>
         <div class="wrap">
             <h1><?php 
@@ -761,7 +864,7 @@ if ( function_exists( 'wplb_fs' ) ) {
                                 </div>
 
                                 <?php 
-        } else {
+        } elseif ( $template == 'product' ) {
             ?>
 
                                 <div class="posts">
@@ -1048,6 +1151,88 @@ if ( function_exists( 'wplb_fs' ) ) {
             'wplb_sn_messenger' => 'facebook-messenger',
             'wplb_sn_telegram'  => 'telegram',
         ];
+    }
+    
+    add_action( 'wp', 'wplb_admin_notice' );
+    function wplb_admin_notice()
+    {
+        $screen = get_current_screen();
+        if ( $screen->id !== 'edit-wp-link-bio' ) {
+            return;
+        }
+        $check_recommended_plugins = wplb_check_recommended_plugins();
+        if ( $check_recommended_plugins ) {
+            add_action( 'admin_notices', 'wplb_link_ordering_notice__info' );
+        }
+    }
+    
+    function wplb_check_recommended_plugins()
+    {
+        $is_admin = is_admin();
+        $user_can_activate_plugins = current_user_can( 'activate_plugins' );
+        $plugin_slug = 'simple-page-ordering/simple-page-ordering.php';
+        $is_plugin_installed = wplb_is_plugin_installed( $plugin_slug );
+        $is_plugin_active = is_plugin_active( $plugin_slug );
+        return $is_admin && $user_can_activate_plugins && (!$is_plugin_installed || !$is_plugin_active);
+    }
+    
+    function wplb_link_ordering_notice__info()
+    {
+        $plugin_slug = 'simple-page-ordering/simple-page-ordering.php';
+        $slug = 'simple-page-ordering';
+        $action = '';
+        
+        if ( !wplb_is_plugin_installed( $plugin_slug ) ) {
+            $action = 'install-plugin';
+            $action_text = 'Install Now';
+            $plugin_action_url = wp_nonce_url( add_query_arg( [
+                'action' => $action,
+                'plugin' => $slug,
+            ], admin_url( 'update.php' ) ), $action . '_' . $slug );
+        } elseif ( !is_plugin_active( $plugin_slug ) ) {
+            $action = 'activate';
+            $action_text = 'Activate Now';
+            $plugin_action_url = wplb_plugin_activation_url( $plugin_slug );
+        }
+        
+        ?>
+        <div class="notice notice-warning">
+            <p>To order your links using drag & drop, we strongly recommend you <strong>Simple Page Ordering</strong> plugin:
+            <a href="<?php 
+        echo  $plugin_action_url ;
+        ?>" aria-label="More information about Simple Page Ordering" data-title="Simple Page Ordering"><?php 
+        echo  $action_text ;
+        ?></a>
+            </p>
+        </div>
+        <?php 
+    }
+    
+    function wplb_is_plugin_installed( $plugin_slug )
+    {
+        $installed_plugins = get_plugins();
+        return array_key_exists( $plugin_slug, $installed_plugins ) || in_array( $plugin_slug, $installed_plugins, true );
+    }
+    
+    /**
+     * Generate an activation URL for a plugin like the ones found in WordPress plugin administration screen.
+     *
+     * @param  string $plugin A plugin-folder/plugin-main-file.php path (e.g. "my-plugin/my-plugin.php")
+     *
+     * @return string         The plugin activation url
+     */
+    function wplb_plugin_activation_url( $plugin )
+    {
+        // the plugin might be located in the plugin folder directly
+        if ( strpos( $plugin, '/' ) ) {
+            $plugin = str_replace( '/', '%2F', $plugin );
+        }
+        // $activateUrl = sprintf(admin_url('plugins.php?action=activate&plugin=%s&plugin_status=all&paged=1&s'), $plugin);
+        $activateUrl = admin_url( 'plugins.php' );
+        // change the plugin request to the plugin to pass the nonce check
+        // $_REQUEST['plugin'] = $plugin;
+        // $activateUrl = wp_nonce_url($activateUrl, 'activate-plugin_' . $plugin);
+        return $activateUrl;
     }
 
 }

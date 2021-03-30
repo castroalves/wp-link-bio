@@ -16,7 +16,7 @@
 
     <?php 
     $display_location = get_option( 'wplb_sn_display_location', 'before' );
-    $social_networks_template = WPLB_PATH . '/templates/pro/social-networks.php';
+    $social_networks_template = WPLB_PATH . '/templates/partials/social-networks.php';
     if (
         $display_location == 'before'
         && file_exists($social_networks_template)
@@ -85,9 +85,14 @@
 
     </section>
 
-    <?php
-    if ($display_location == 'after') {
-        include_once( WPLB_PATH . '/templates/pro/social-networks.php' );
+    <?php 
+    $display_location = get_option( 'wplb_sn_display_location', 'after' );
+    $social_networks_template = WPLB_PATH . '/templates/partials/social-networks.php';
+    if (
+        $display_location == 'after'
+        && file_exists($social_networks_template)
+        ) {
+        include_once $social_networks_template;
     }
     ?>
 
