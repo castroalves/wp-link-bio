@@ -3,7 +3,7 @@ Contributors: cadudecastroalves, blastmkt, freemius
 Donate link: https://blastmkt.com/wp-link-bio-wordpress-plugin/?utm_source=wordpress.org&utm_medium=link&utm_campaign=wordpress-plugin-repository&utm_content=donate
 Tags: instagram, twitter, linktree, link bio, landing page
 Requires at least: 4.6
-Tested up to: 5.7
+Tested up to: 5.9.3
 Requires PHP: 7.0
 Stable tag: trunk
 License: GPLv2
@@ -124,7 +124,7 @@ Of course! We'd love to get your ideas! Please, [submit your idea](https://wordp
 
 == Changelog ==
 
-= 1.4.4 =
+= 1.4.5 =
 
-* Fixed critical error in the landing page
+* Update to Freemius SDK 2.4.3
     

@@ -2,11 +2,11 @@
 
 /** 
  * Plugin Name: WP Link Bio
- * Plugin URI: https://blastmkt.com/wp-link-bio
+ * Plugin URI: https://github.com/castroalves/wp-link-bio
  * Description: Add unlimited links to your Instagram bio, powered by WordPress.
- * Version: 1.4.4
- * Author: Blast Marketing
- * Author URI: https://blastmkt.com/
+ * Version: 1.4.5
+ * Author: Cadu de Castro Alves
+ * Author URI: https://castroalves.dev
  * License: GPLv2
  * License URI: https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: wp-link-bio
@@ -133,7 +133,7 @@ if ( function_exists( 'wplb_fs' ) ) {
         }
         wp_enqueue_media();
         wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_script( 'font-awesome', '//kit.fontawesome.com/59ad578af5.js' );
+        wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' );
         wp_enqueue_script(
             'wplb-script',
             plugins_url( 'js/wp-link-bio-admin.js', __FILE__ ),
@@ -362,6 +362,19 @@ if ( function_exists( 'wplb_fs' ) ) {
             'placeholder' => '#000000',
         ]
         );
+        // Hide credits
+        register_setting( 'wp-link-bio', 'wplb_show_credits' );
+        add_settings_field(
+            'wplb_show_credits',
+            __( 'Show Powered By', 'wp-link-bio' ),
+            'wplb_show_credits_cb',
+            'wp-link-bio',
+            'wplb_section_general_settings',
+            [
+            'label_for' => 'wplb_show_credits_cb',
+            'class'     => 'wplb-row',
+        ]
+        );
         // if ( wplb_fs()->can_use_premium_code__premium_only() ) {
         add_settings_section(
             'wplb_section_social_networks_settings',
@@ -397,6 +410,14 @@ if ( function_exists( 'wplb_fs' ) ) {
             'callback'    => 'wplb_input_text_cb',
             'section'     => 'wplb_section_social_networks_settings',
             'placeholder' => 'https://instagram.com',
+            'type'        => 'url',
+        ],
+            [
+            'id'          => 'wplb_sn_tiktok',
+            'title'       => __( 'TikTok', 'wp-link-bio' ),
+            'callback'    => 'wplb_input_text_cb',
+            'section'     => 'wplb_section_social_networks_settings',
+            'placeholder' => 'https://tiktok.com',
             'type'        => 'url',
         ],
             [
@@ -1066,7 +1087,7 @@ if ( function_exists( 'wplb_fs' ) ) {
         if ( !wplb_is_endpoint() ) {
             return;
         }
-        wp_enqueue_script( 'font-awesome', '//kit.fontawesome.com/59ad578af5.js' );
+        wp_enqueue_style( 'font-awesome', '//cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css' );
         wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Roboto:400,700' );
         wp_enqueue_script(
             'wp-link-bio-front-js',
@@ -1089,12 +1110,17 @@ if ( function_exists( 'wplb_fs' ) ) {
     add_action( 'wp_enqueue_scripts', 'wplb_front_scripts' );
     function wplb_register_scripts()
     {
-        return [ 'font-awesome', 'wp-link-bio-front-js' ];
+        return [ 'wp-link-bio-front-js' ];
     }
     
     function wplb_register_styles()
     {
-        return [ 'google-fonts', 'wp-link-bio-front-css', 'animate-css' ];
+        return [
+            'google-fonts',
+            'wp-link-bio-front-css',
+            'animate-css',
+            'font-awesome'
+        ];
     }
     
     function wplb_remove_all_scripts()
@@ -1142,6 +1168,7 @@ if ( function_exists( 'wplb_fs' ) ) {
         return [
             'wplb_sn_facebook'  => 'facebook-f',
             'wplb_sn_instagram' => 'instagram',
+            'wplb_sn_tiktok'    => 'tiktok',
             'wplb_sn_twitter'   => 'twitter',
             'wplb_sn_youtube'   => 'youtube',
             'wplb_sn_twitch'    => 'twitch',

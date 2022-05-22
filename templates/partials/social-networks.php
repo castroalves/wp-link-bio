@@ -14,7 +14,7 @@ if ( count($social_networks) ) :
         ?>
         
         <li class="social-media__links__item">
-            <a href="<?php echo esc_url_raw( $url ); ?>"><i class="fab fa-<?php echo esc_attr( $icon ); ?>"></i></a>
+            <a href="<?php echo esc_url_raw( $url ); ?>"><i class="fa-brands fa-<?php echo esc_attr( $icon ); ?>"></i></a>
         </li>
 
         <?php 
